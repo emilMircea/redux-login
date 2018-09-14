@@ -1,0 +1,45 @@
+.flex-container {
+  display: flex;
+  height: 100vh;
+}
+
+.column {
+  flex-basis: 50%
+}
+
+.column.two {
+  background: black;
+  color: white;
+}
+
+/* page title */
+.login-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1 px solid;
+  padding-bottom: 9rem;
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+
+.lead-message {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #505050;
+  margin-left: 4rem;
+}
+
+/* Login form */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
+}
+
+.action-btns-wrapper {
+  display: flex;
+  align-items: baseline;
+  text-decoration: underline;
+}
