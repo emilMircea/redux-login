@@ -5,7 +5,8 @@ import Box from 'grommet/components/Box'
 import Title from 'grommet/components/Title'
 import Form from 'grommet/components/Form'
 import { withStyles } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
+import UsernameInput from './components/inputs/UserNameInput'
+import PasswordInput from './components/inputs/PasswordInput'
 import Button from '@material-ui/core/Button'
 import Header from 'grommet/components/Header'
 import foto1 from './assets/images/foto-1.png'
@@ -15,11 +16,6 @@ const styles = theme => ({
 	container: {
 		display: 'flex',
 		flexWrap: 'wrap'
-	},
-	textField: {
-		marginLeft: theme.spacing.unit,
-		marginRight: theme.spacing.unit,
-		width: 400
 	},
 	button: {
     paddingTop: 20,
@@ -46,20 +42,8 @@ class App extends Component {
 					<Box className="login-wrapper">
 						<p className="lead-message">Finally, you're back!</p>
 						<form className="login-form">
-							<TextField
-								id="with-placeholder"
-								label="Username *"
-								placeholder="Username *"
-								className={classes.textField}
-								margin="normal"
-							/>
-							<TextField
-								id="with-placeholder"
-								label="Password *"
-								placeholder="Password *"
-								className={classes.textField}
-								margin="normal"
-							/>
+							<UsernameInput />
+							<PasswordInput />
 							<br/>
 							<div className="action-btns-wrapper">
 								<Button
