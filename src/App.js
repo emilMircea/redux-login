@@ -7,7 +7,8 @@ import Form from 'grommet/components/Form'
 import { withStyles } from '@material-ui/core/styles'
 import UsernameInput from './components/inputs/UserNameInput'
 import PasswordInput from './components/inputs/PasswordInput'
-import Button from '@material-ui/core/Button'
+import LoginButton from './components/buttons/LoginButton'
+import ForgotPassButton from './components/buttons/ForgotPassButton'
 import Header from 'grommet/components/Header'
 import foto1 from './assets/images/foto-1.png'
 import foto2 from './assets/images/foto-2.jpg'
@@ -46,16 +47,11 @@ class App extends Component {
 							<PasswordInput />
 							<br/>
 							<div className="action-btns-wrapper">
-								<Button
-									variant="contained"
-									type="submit"
-									className={classes.button}
-								>
-									Login
-								</Button>
-								<Button href="#text-buttons" className={classes.link}>
+								<LoginButton />
+								{/* <Button href="#text-buttons" className={classes.link}>
 									Forgot Password
-								</Button>
+								</Button> */}
+								<ForgotPassButton />
 							</div>
 						</form>
 					</Box>
