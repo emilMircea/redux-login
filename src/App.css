@@ -39,7 +39,9 @@
 }
 
 .action-btns-wrapper {
+  width: 400px;
   display: flex;
   align-items: baseline;
   text-decoration: underline;
+  margin-top: 40px;
 }
