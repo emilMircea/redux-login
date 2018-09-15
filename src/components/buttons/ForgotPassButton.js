@@ -9,6 +9,7 @@ const styles = theme => ({
   cssRoot: {
     color: 'black',
     background: 'transparent',
+    textDecoration: 'uppercase',
     '&:hover': {
       background: 'transparent'
     },
