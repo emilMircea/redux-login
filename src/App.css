@@ -23,6 +23,8 @@
   margin-top: 4rem;
 }
 
+/* Login form */
+
 .lead-message {
   font-weight: 600;
   font-size: 1.1rem;
@@ -30,18 +32,40 @@
   margin-left: 4rem;
 }
 
-/* Login form */
-
-.login-form {
-  display: flex;
-  flex-direction: column;
+.form {
+  width: 400px;
   margin-left: 4rem;
 }
 
-.action-btns-wrapper {
+.form div {
+  width: 400px;
+  margin-bottom: 1rem;
+}
+
+.actions-wrapper {
   width: 400px;
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
   text-decoration: underline;
-  margin-top: 40px;
+}
+
+#login-btn {
+  background: #101010;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+}
+
+#login-btn:hover {
+  background: black;
+  text-decoration: none;
+  color: white;
+
+}
+
+#login-btn:active {
+  background: black;
+  text-decoration: none;
+  color: gray;
 }
