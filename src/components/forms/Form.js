@@ -40,8 +40,6 @@ const FormComponent = () => (
 
 				<br />
 				<div className="actions-wrapper">
-					{/* <LoginButton disabled={isSubmitting}
-          onClick={submitForm} /> */}
 					<Button
 						variant="raised"
 						color="primary"
