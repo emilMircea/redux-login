@@ -1,19 +1,13 @@
 import React, { PureComponent } from 'react'
 // router
-import { IndeRoute, Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import LoginPage from './pages/LoginPage'
 import ProtectedPage from './pages/ProtectedPage'
 
 class App extends PureComponent {
-
-	componentDidMount() {
-		// clear localStorage for demo purposes
-		this.clearLocalStorage()
-	}
-
 	state = {
-		accessToken: null
+		accessToken: 'jhvjhb'
 	}
 
 	clearLocalStorage = () => {
@@ -21,19 +15,24 @@ class App extends PureComponent {
 	}
 
 	render() {
+		const { accessToken } = this.state
+
 		return (
-			<Switch>
-				<Route path="/" component={LoginPage} />
+			<React.Fragment>
+				<Route exact path="/" component={LoginPage} />
+				<Route exact path="/login" component={LoginPage} />
+				<Route exact path="/protected" component={ProtectedPage} />
 				<Route
 					exact
 					path="/protected"
-					// component={ProtectedPage}
-					render={(props) => <ProtectedPage {...props} />}
-
+					render={() =>
+						accessToken ? <Redirect to="/protected" /> : <LoginPage />
+					}
 				/>
-			</Switch>
+				{/* <Route path="/protected" component={ProtectedPage} /> */}
+			</React.Fragment>
 		)
 	}
 }
 
-export default withRouter(App)
+export default App

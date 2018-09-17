@@ -1,12 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-// redux
-import { connect } from 'react-redux'
-import { authorize } from '../reducers/reducer'
-// router
-import { Route, Redirect } from 'react-router-dom'
-import ProtectedPage from './ProtectedPage'
-
 import Carousel from 'grommet/components/Carousel'
 import Box from 'grommet/components/Box'
 import FormComponent from '../components/forms/FormComponent'
@@ -17,7 +9,20 @@ import foto2 from '../assets/images/foto-2.png'
 
 
 class LoginPage extends Component {
+
+	// state = {
+	// 	token: null
+	// }
+	//
+	// setToken = (token) => {
+	// 	this.setState({ token })
+	// }
+
 	render() {
+
+		// if (localStorage.fbToken) {
+		// 	this.setToken(localStorage.fbToken)
+		// }
 
 		return (
 			<div className="flex-container">

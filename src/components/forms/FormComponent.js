@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
 import ForgotPassButton from '../buttons/ForgotPassButton'
 import '../../App.css'
 import UsernameInput from '../inputs/UsernameInput'
@@ -7,11 +6,6 @@ import PasswordInput from '../inputs/PasswordInput'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 class FormComponent extends React.Component {
-	state = {
-		username: '',
-		password: '',
-		redirectToReferrer: false
-	}
 
 	handleChange = e => {
 		const target = e.target
@@ -30,6 +24,7 @@ class FormComponent extends React.Component {
 	responseFacebook = response => {
 		const { username, password } = this.state
 		if (username && password && response) {
+			// persist in local storage
 			localStorage.setItem('username', username)
 			localStorage.setItem('password', password)
 			localStorage.setItem('name', response.name)
