@@ -1,42 +1,39 @@
-import React, { Component } from 'react'
-import './App.css'
-import Carousel from 'grommet/components/Carousel'
-import Box from 'grommet/components/Box'
-import Title from 'grommet/components/Title'
-import FormComponent from './components/forms/Form'
+import React, { PureComponent } from 'react'
+// router
+import { IndeRoute, Route, Switch, Redirect, withRouter } from 'react-router-dom'
 
-import foto1 from './assets/images/foto-1.png'
-import foto2 from './assets/images/foto-2.jpg'
+import LoginPage from './pages/LoginPage'
+import ProtectedPage from './pages/ProtectedPage'
 
+class App extends PureComponent {
 
-class App extends Component {
+	componentDidMount() {
+		// clear localStorage for demo purposes
+		this.clearLocalStorage()
+	}
+
+	state = {
+		accessToken: null
+	}
+
+	clearLocalStorage = () => {
+		localStorage.clear()
+	}
+
 	render() {
 		return (
-			<div className="flex-container">
-				<div className="column one">
-					<Title className="login-title">Deltaworx</Title>
-					<Box className="login-wrapper">
-						<p className="lead-message">Finally, you're back!</p>
-						{/* <form className="login-form">
-							<UsernameInput />
-							<PasswordInput />
-							<div className="action-btns-wrapper">
-								<LoginButton />
-								<ForgotPassButton />
-							</div>
-						</form> */}
-						<FormComponent />
-					</Box>
-				</div>
-				<div className="column two">
-					<Carousel>
-						<img src={foto1} alt="first" />
-						<img src={foto2} alt="second" />
-					</Carousel>
-				</div>
-			</div>
+			<Switch>
+				<Route path="/" component={LoginPage} />
+				<Route
+					exact
+					path="/protected"
+					// component={ProtectedPage}
+					render={(props) => <ProtectedPage {...props} />}
+
+				/>
+			</Switch>
 		)
 	}
 }
 
-export default App
+export default withRouter(App)
