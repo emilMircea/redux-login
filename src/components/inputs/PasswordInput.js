@@ -41,11 +41,13 @@ function PasswordInput(props) {
           Password
         </InputLabel>
         <Input
+          name={props.name}
+          onChange={props.handleChange}
+          type='password'
           classes={{
             root: classes.root,
             underline: classes.cssUnderline,
           }}
-          id="custom-css-input"
         />
       </FormControl>
     </div>
