@@ -39,7 +39,7 @@
 
 .form div {
   width: 400px;
-  margin-bottom: 1rem;
+  margin-bottom: .6rem;
 }
 
 .actions-wrapper {
@@ -52,9 +52,12 @@
 
 #login-btn {
   background: #101010;
+  color: white;
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.4rem;
   margin-right: 2rem;
+  border-radius: 5px;
 }
 
 #login-btn:hover {
